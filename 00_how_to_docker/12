@@ -1,0 +1,7 @@
+docker pull mysql && docker run -d --mount source=hatchery,destination=/usr/share/mysql/ --name spawning-pool -e MYSQL_ROOT_PASSWORD="Kerrigan" -e MYSQL_DATABASE="zerglings" --restart=on-failure mysql
+
+#Test docker inspect -f "{{json .Mounts}}" spawning-pool
+# DB test: docker exec -it spawning-pool sh
+# mysql -u root -p
+# Pass Karigan
+# Command SELECT DATABSE();
