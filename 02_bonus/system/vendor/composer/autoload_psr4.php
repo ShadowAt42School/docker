@@ -9,5 +9,6 @@ return array(
     'ViewControllers\\' => array($baseDir . '/viewcntls'),
     'Phroute\\Phroute\\' => array($vendorDir . '/phroute/phroute/src/Phroute'),
     'League\\Plates\\' => array($vendorDir . '/league/plates/src'),
+    'Core\\Persist\\' => array($baseDir . '/core/persist'),
     'Core\\' => array($baseDir . '/core'),
 );

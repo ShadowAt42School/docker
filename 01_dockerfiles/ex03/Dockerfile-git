@@ -1,0 +1,8 @@
+FROM debian:8
+RUN apt-get update -y && \
+	apt-get install -y curl openssh-server ca-certificates
+
+RUN curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | bash
+ENV EXTERNAL_URL="localhost"
+ENV TERM="accept"
+RUN apt-get install gitlab-ce

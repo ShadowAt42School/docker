@@ -1,0 +1,4 @@
+FROM nginx
+COPY serverconf/nginx.host.conf /etc/nginx/conf.d/site.conf
+COPY serverconf/nginx.php.conf /etc/nginx/php.conf
+EXPOSE 8080

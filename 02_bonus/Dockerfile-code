@@ -1,0 +1,23 @@
+FROM debian:latest
+ARG rsakeypass=~/.ssh/id_rsa.pub
+ARG pergit
+RUN apt-get update -y && \
+	apt-get upgrade -y && \
+	apt-get install -y build-essential git && \
+	git clone https://ShadowMad:VH25mbmelmax@bitbucket.org/ShadowMad/phpstdworkenv.git public_html  && \
+	chmod 755 public_html && \
+	rm -rf public_html/.git && \
+	mkdir ~/.ssh && \
+	#ssh-keygen -t rsa -f ~/.ssh/id_rsa -N $rsakeypass && \
+	cd /public_html && \
+	git init && \
+	git remote add origin $pergit && \
+	git add . && \
+	git commit -m 'Init' && \
+	git push -u origin master && /
+	cd /
+COPY $rsakeypass /home/root/.ssh/id_rsa
+ENV GIT_DIR  /public_html
+VOLUME /public_html
+WORKDIR /public_html
+ENTRYPOINT /usr/bin/tail -f /dev/null

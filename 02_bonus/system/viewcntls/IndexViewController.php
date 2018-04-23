@@ -1,14 +1,21 @@
 <?php
 	namespace ViewControllers;
-	use \Core\BaseController;
+	use \Core\BaseViewController;
 
-	class IndexViewController extends BaseController {
+	final class IndexViewController extends BaseViewController {
 		public function __construct() {
 			parent::__construct();
 		}
 
-		public function getPage() {
-			
+		public function genPageInit() {
+			return $this->genPage(array(
+				'head' => null,
+				'footer' => array(),
+				'content' => array(
+					'template' => 'views::welcome',
+					'data' => array()
+				)
+			));
 		}
 	}
 ?>

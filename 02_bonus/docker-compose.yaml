@@ -1,0 +1,32 @@
+version: '3'
+services:
+    code:
+        container_name: code
+        image: code
+    fpm:
+        container_name: fpm
+        build:
+            context: .
+            dockerfile: Dockerfile-phpfpm
+        image: fphp
+        expose:
+            - 9000
+        volumes:
+            - code
+    nginx:
+        container_name: nginx
+        build:
+            context: .
+            dockerfile: Dockerfile-nginx
+        image: "nginxy"
+        ports:
+            - "80:8080"
+        volumes:
+         - code
+        deploy:
+            mode: replicated
+            replicas: 1
+networks:
+    default:
+        # Use a custom driver
+        driver: bridge

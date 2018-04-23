@@ -21,6 +21,7 @@ class ComposerStaticInit3946bfdb6bcea560b7478614e9427c2b
         ),
         'C' => 
         array (
+            'Core\\Persist\\' => 13,
             'Core\\' => 5,
         ),
     );
@@ -38,41 +39,14 @@ class ComposerStaticInit3946bfdb6bcea560b7478614e9427c2b
         array (
             0 => __DIR__ . '/..' . '/league/plates/src',
         ),
+        'Core\\Persist\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/core/persist',
+        ),
         'Core\\' => 
         array (
             0 => __DIR__ . '/../..' . '/core',
         ),
-    );
-
-    public static $classMap = array (
-        'Core\\BaseController' => __DIR__ . '/../..' . '/core/BaseController.php',
-        'League\\Plates\\Engine' => __DIR__ . '/..' . '/league/plates/src/Engine.php',
-        'League\\Plates\\Extension\\Asset' => __DIR__ . '/..' . '/league/plates/src/Extension/Asset.php',
-        'League\\Plates\\Extension\\ExtensionInterface' => __DIR__ . '/..' . '/league/plates/src/Extension/ExtensionInterface.php',
-        'League\\Plates\\Extension\\URI' => __DIR__ . '/..' . '/league/plates/src/Extension/URI.php',
-        'League\\Plates\\Template\\Data' => __DIR__ . '/..' . '/league/plates/src/Template/Data.php',
-        'League\\Plates\\Template\\Directory' => __DIR__ . '/..' . '/league/plates/src/Template/Directory.php',
-        'League\\Plates\\Template\\FileExtension' => __DIR__ . '/..' . '/league/plates/src/Template/FileExtension.php',
-        'League\\Plates\\Template\\Folder' => __DIR__ . '/..' . '/league/plates/src/Template/Folder.php',
-        'League\\Plates\\Template\\Folders' => __DIR__ . '/..' . '/league/plates/src/Template/Folders.php',
-        'League\\Plates\\Template\\Func' => __DIR__ . '/..' . '/league/plates/src/Template/Func.php',
-        'League\\Plates\\Template\\Functions' => __DIR__ . '/..' . '/league/plates/src/Template/Functions.php',
-        'League\\Plates\\Template\\Name' => __DIR__ . '/..' . '/league/plates/src/Template/Name.php',
-        'League\\Plates\\Template\\Template' => __DIR__ . '/..' . '/league/plates/src/Template/Template.php',
-        'Phroute\\Phroute\\Dispatcher' => __DIR__ . '/..' . '/phroute/phroute/src/Phroute/Dispatcher.php',
-        'Phroute\\Phroute\\Exception\\BadRouteException' => __DIR__ . '/..' . '/phroute/phroute/src/Phroute/Exception/BadRouteException.php',
-        'Phroute\\Phroute\\Exception\\HttpException' => __DIR__ . '/..' . '/phroute/phroute/src/Phroute/Exception/HttpException.php',
-        'Phroute\\Phroute\\Exception\\HttpMethodNotAllowedException' => __DIR__ . '/..' . '/phroute/phroute/src/Phroute/Exception/HttpMethodNotAllowedException.php',
-        'Phroute\\Phroute\\Exception\\HttpRouteNotFoundException' => __DIR__ . '/..' . '/phroute/phroute/src/Phroute/Exception/HttpRouteNotFoundException.php',
-        'Phroute\\Phroute\\HandlerResolver' => __DIR__ . '/..' . '/phroute/phroute/src/Phroute/HandlerResolver.php',
-        'Phroute\\Phroute\\HandlerResolverInterface' => __DIR__ . '/..' . '/phroute/phroute/src/Phroute/HandlerResolverInterface.php',
-        'Phroute\\Phroute\\Route' => __DIR__ . '/..' . '/phroute/phroute/src/Phroute/Route.php',
-        'Phroute\\Phroute\\RouteCollector' => __DIR__ . '/..' . '/phroute/phroute/src/Phroute/RouteCollector.php',
-        'Phroute\\Phroute\\RouteDataArray' => __DIR__ . '/..' . '/phroute/phroute/src/Phroute/RouteDataArray.php',
-        'Phroute\\Phroute\\RouteDataInterface' => __DIR__ . '/..' . '/phroute/phroute/src/Phroute/RouteDataInterface.php',
-        'Phroute\\Phroute\\RouteDataProviderInterface' => __DIR__ . '/..' . '/phroute/phroute/src/Phroute/RouteDataProviderInterface.php',
-        'Phroute\\Phroute\\RouteParser' => __DIR__ . '/..' . '/phroute/phroute/src/Phroute/RouteParser.php',
-        'ViewControllers\\IndexViewController' => __DIR__ . '/../..' . '/viewcntls/IndexViewController.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -80,7 +54,6 @@ class ComposerStaticInit3946bfdb6bcea560b7478614e9427c2b
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit3946bfdb6bcea560b7478614e9427c2b::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit3946bfdb6bcea560b7478614e9427c2b::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit3946bfdb6bcea560b7478614e9427c2b::$classMap;
 
         }, null, ClassLoader::class);
     }
