@@ -8,14 +8,13 @@ RUN apt-get update -y && \
 	chmod 755 public_html && \
 	rm -rf public_html/.git && \
 	mkdir ~/.ssh && \
-	#ssh-keygen -t rsa -f ~/.ssh/id_rsa -N $rsakeypass && \
 	cd /public_html && \
 	git init && \
 	git remote add origin $pergit && \
 	git add . && \
 	git commit -m 'Init' && \
-	git push -u origin master && /
-	cd /
+	git push -u origin master && \
+	cd \/
 COPY $rsakeypass /home/root/.ssh/id_rsa
 ENV GIT_DIR  /public_html
 VOLUME /public_html
